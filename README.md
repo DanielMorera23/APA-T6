@@ -254,9 +254,11 @@ funcionamiento de su función.
 
 ##### Ejecución de los tests unitarios de `alumno.py`
 
-Inserte a continuación una captura de pantalla que muestre el resultado de ejecutar el
-fichero `alumno.py` con la opción *verbosa*, de manera que se muestre el
-resultado de la ejecución de los tests unitarios.
+### Alumnos
+<img width="217" height="398" alt="image" src="https://github.com/user-attachments/assets/710d24e6-f9d8-4d8a-8e82-b415ababf196" />
+
+### Horas
+<img width="294" height="223" alt="image" src="https://github.com/user-attachments/assets/6db30841-a7ac-4763-bc38-8cf8a3c58694" />
 
 ##### Código desarrollado
 
