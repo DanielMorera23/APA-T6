@@ -42,3 +42,43 @@ class Alumno:
         completo y la nota media del alumno con un decimal.
         """
         return f'{self.numIden}\t{self.nombre}\t{self.media():.1f}'
+
+import re
+
+def leeAlumnos(ficAlum):
+    """
+    Lee un fichero de texto con datos de alumnos y devuelve un diccionario
+    {nombre: Alumno}.
+
+    >>> alumnos = leeAlumnos('alumnos.txt')
+    >>> for alumno in alumnos:
+    ...     print(alumnos[alumno])
+    ...
+    171	Blanca Agirrebarrenetse	9.5
+    23	Carles Balcell de Lara	4.9
+    68	David Garcia Fuster	7.0
+    """
+    alumnos = {}
+    patron = re.compile(
+        r'(\d+)\s+'
+        r'([A-Za-záéíóúüÁÉÍÓÚÜñÑ]+'
+        r'(?:\s+[A-Za-záéíóúüÁÉÍÓÚÜñÑ]+)+)\s+'
+        r'([\d\s.]+)$'
+    )
+    with open(ficAlum, encoding='utf-8') as f:
+        for linea in f:
+            linea = linea.strip()
+            if not linea:
+                continue
+            m = patron.match(linea)
+            if m:
+                numIden = int(m.group(1))
+                nombre = m.group(2)
+                notas = [float(n) for n in m.group(3).split()]
+                alumnos[nombre] = Alumno(nombre, numIden, notas)
+    return alumnos
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod(optionflags=doctest.NORMALIZE_WHITESPACE, verbose=True)
