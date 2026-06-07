@@ -1,11 +1,8 @@
 class Alumno:
     """
     Clase usada para el tratamiento de las notas de los alumnos. Cada uno
-    incluye los atributos siguientes:
-
-    numIden:   Número de identificación. Es un número entero que, en caso
-               de no indicarse, toma el valor por defecto 'numIden=-1'.
-    nombre:    Nombre completo del alumno.
+    incluye los atributos siguientes:.
+    nombre:    Daniel Morera
     notas:     Lista de números reales con las distintas notas de cada alumno.
     """
 
